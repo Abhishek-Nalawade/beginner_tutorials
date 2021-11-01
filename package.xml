@@ -19,7 +19,11 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
+<<<<<<< HEAD
   <!-- <url type="website">http://wiki.ros.org/beginner_tutorials</url> -->
+=======
+  <!-- <url type="website">http://wiki.ros.org/</url> -->
+>>>>>>> aa39a7b8e6c229516937bb6ce80b4dcb2f8c8389
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->

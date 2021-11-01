@@ -1,6 +1,15 @@
+/**
+ * @file publisher.cpp
+ * @author Abhishek Nalawade
+ * @brief Publishes string data on a topic
+ * @version 0.1
+ * @date 2021-10-31
+ *
+ * @copyright Copyright (c) 2021
+ */
+#include<iostream>
 #include"ros/ros.h"
 #include"std_msgs/String.h"
-#include<sstream>
 
 int main(int argc, char **argv) {
 ros::init(argc, argv, "talker");

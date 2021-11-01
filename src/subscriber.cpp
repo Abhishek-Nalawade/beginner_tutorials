@@ -1,6 +1,15 @@
+/**
+ * @file subscriber.cpp
+ * @author Abhishek Nalawade
+ * @brief Subscribes to a topic of type string
+ * @version 0.1
+ * @date 2021-10-31
+ *
+ * @copyright Copyright (c) 2021
+ */
+#include<iostream>
 #include"ros/ros.h"
 #include"std_msgs/String.h"
-#include<sstream>
 
 void chatterCallback(const std_msgs::String::ConstPtr& msg) {
   ROS_INFO("I heard: [%s]", msg->data.c_str());

@@ -21,7 +21,7 @@ int count = 0;
 while(ros::ok()) {
   std_msgs::String msg;
   std::string txt;
-  txt = "Hi there ";
+  txt = "Hi there " + std::to_string(count);
   msg.data = txt;
 
   ROS_INFO("%s", msg.data.c_str());

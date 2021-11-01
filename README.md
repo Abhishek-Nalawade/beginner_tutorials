@@ -8,7 +8,7 @@ A simple tutorial for for the standard ROS cpp publisher and subscriber setup
 ## To Build
 1) Create a catkin workspace
 2) Clone the repository using
-https://github.com/Abhishek-Nalawade/beginner_tutorials/tree/main
+```https://github.com/Abhishek-Nalawade/beginner_tutorials/tree/main```
 
 ## To Run
 1) Go in catkin workspace directory and type catkin_make

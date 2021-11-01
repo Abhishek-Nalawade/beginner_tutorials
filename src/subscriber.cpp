@@ -1,7 +1,7 @@
 /**
  * MIT License
 
- * Copyright (c) 2021 Abhishek Nalawade, Aditya Jadhav
+ * Copyright (c) 2021 Abhishek Nalawade
 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **/
- 
+
 /**
  * @file subscriber.cpp
  * @author Abhishek Nalawade
@@ -36,7 +36,7 @@
 #include"std_msgs/String.h"
 
 void chatterCallback(const std_msgs::String::ConstPtr& msg) {
-  ROS_INFO("I heard: [%s]", msg->data.c_str());
+  ROS_INFO("I am hearing: [%s]", msg->data.c_str());
 }
 
 int main(int argc, char **argv) {

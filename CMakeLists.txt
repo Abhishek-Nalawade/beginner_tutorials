@@ -205,15 +205,12 @@ include_directories(
 # catkin_add_nosetests(test)
 add_executable(publisher src/talker.cpp)
 target_link_libraries(publisher ${catkin_LIBRARIES})
-<<<<<<< HEAD
 #add_dependencies(publisher beginner_tutorials_generate_messages_cpp)
 
 add_executable(subscriber src/listener.cpp)
 target_link_libraries(subscriber ${catkin_LIBRARIES})
-=======
 #add_dependencies(publisher beginner_tutorials)
 
-add_executable(listener src/listener.cpp)
-target_link_libraries(listener ${catkin_LIBRARIES})
->>>>>>> aa39a7b8e6c229516937bb6ce80b4dcb2f8c8389
+add_executable(subscriber src/listener.cpp)
+target_link_libraries(subscriber ${catkin_LIBRARIES})
 #add_dependencies(listener beginner_tutorials_generate_messages_cpp)

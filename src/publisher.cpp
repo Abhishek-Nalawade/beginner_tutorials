@@ -34,12 +34,24 @@
 #include<iostream>
 #include"ros/ros.h"
 #include"std_msgs/String.h"
+#include"beginner_tutorials/change_base_output_string.h"
+
+
+bool changeString(beginner_tutorials::change_base_output_string::Request &req,
+                beginner_tutorials::change_base_output_string::Response &res) {
+                  std::string previous;
+                  previous = req.previousString;
+                  res.nextString = req.previousString;
+                  return true;
+                  }
+
 
 int main(int argc, char **argv) {
 ros::init(argc, argv, "talker");
 ros::NodeHandle n;
 ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 int rate = std::stoi(argv[1]);
+
 if(rate > 10) {
   ROS_WARN_STREAM("The frequency rate is high");
 } else if(rate < 0) {
@@ -52,11 +64,15 @@ if(rate > 10) {
   ROS_INFO_STREAM("Increasing the frequncy to the default 1Hz");
   rate = 1;
 } else {
-  ROS_INFO("The frequency looks good");
+  ROS_INFO_STREAM("The frequency looks good");
 }
 ros::Rate loop_rate(rate);
 
 ROS_DEBUG_STREAM_ONCE("Frequency rate is set at: " << rate);
+
+ros::ServiceServer server = n.advertiseService("change_base_output_string",
+                                                  changeString);
+
 
 int count = 0;
 while(ros::ok()) {

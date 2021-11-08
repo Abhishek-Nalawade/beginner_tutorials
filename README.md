@@ -10,7 +10,7 @@ A simple tutorial for the standard ROS cpp publisher and subscriber setup
 2) Clone the repository using
 
 ```
-git clone https://github.com/Abhishek-Nalawade/beginner_tutorials/tree/main
+git clone https://github.com/Abhishek-Nalawade/beginner_tutorials
 ```
 
 ## To Run

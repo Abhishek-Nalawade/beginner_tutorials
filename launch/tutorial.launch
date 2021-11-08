@@ -1,5 +1,5 @@
 <launch>
-	<arg name = "arg1"/>
+	<arg name = "arg1" default = "1"/>
 	<node pkg = "beginner_tutorials"
 		type = "publisher"
 		name = "speaker"

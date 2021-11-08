@@ -22,6 +22,12 @@ git clone https://github.com/Abhishek-Nalawade/beginner_tutorials/tree/main
 	a) rosrun beginner_tutorials publisher\
 	b) rosrun beginner_tutorials subscriber
 
+## Service
+To change the output string that is being published
+1) Open a new terminal and navigate to catkin_ws
+2 source devel/setup.bash
+3) rosservice call /change_base_output_string "New string "
+
 ## Dependencies
 1) Ubuntu 18.04
 2) ROS Melodic

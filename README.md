@@ -22,7 +22,7 @@ git clone https://github.com/Abhishek-Nalawade/beginner_tutorials
 	a) ```rosrun beginner_tutorials publisher```\
 	b) ```rosrun beginner_tutorials subscriber```
 
-## Service
+## ROS Service
 To change the output string that is being published
 1) Open a new terminal and navigate to catkin_ws
 2) ```source devel/setup.bash```
@@ -33,3 +33,4 @@ To change the output string that is being published
 2) ROS Melodic
 3) roscpp
 4) std_msgs
+5) message_generation

@@ -40,6 +40,7 @@ std::string txt1 = "Hi there ";
 
 bool changeString(beginner_tutorials::change_base_output_string::Request &req,
                 beginner_tutorials::change_base_output_string::Response &res) {
+                  ROS_WARN_STREAM("The output string has been changed");
                   txt1 = req.previousString;
                   res.nextString = req.previousString;
                   return true;
@@ -51,6 +52,9 @@ ros::init(argc, argv, "talker");
 ros::NodeHandle n;
 ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 int rate = std::stoi(argv[1]);
+
+ros::Rate main_rate(1);
+main_rate.sleep();
 
 if(rate > 10) {
   ROS_WARN_STREAM("The frequency rate is high");

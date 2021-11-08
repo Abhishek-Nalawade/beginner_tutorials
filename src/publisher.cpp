@@ -36,11 +36,11 @@
 #include"std_msgs/String.h"
 #include"beginner_tutorials/change_base_output_string.h"
 
+std::string txt1 = "Hi there ";
 
 bool changeString(beginner_tutorials::change_base_output_string::Request &req,
                 beginner_tutorials::change_base_output_string::Response &res) {
-                  std::string previous;
-                  previous = req.previousString;
+                  txt1 = req.previousString;
                   res.nextString = req.previousString;
                   return true;
                   }
@@ -78,7 +78,7 @@ int count = 0;
 while(ros::ok()) {
   std_msgs::String msg;
   std::string txt;
-  txt = "Hi there " + std::to_string(count);
+  txt = txt1 + std::to_string(count);
   msg.data = txt;
 
   ROS_INFO("%s", msg.data.c_str());

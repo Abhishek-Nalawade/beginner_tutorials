@@ -1,7 +1,9 @@
 <launch>
+	<arg name = "arg1"/>
 	<node pkg = "beginner_tutorials"
 		type = "publisher"
 		name = "speaker"
+		args = "$(arg arg1)"
 		output = "screen"/>
 
 	<node pkg = "beginner_tutorials"

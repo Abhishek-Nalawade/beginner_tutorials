@@ -47,7 +47,7 @@ while(ros::ok()) {
   std::string txt;
   txt = "Hi there " + std::to_string(count);
   msg.data = txt;
-
+  std::cout<<"HERE "<<argv[1]<<"\n";
   ROS_INFO("%s", msg.data.c_str());
 
   chatter_pub.publish(msg);

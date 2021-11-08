@@ -36,8 +36,15 @@
 #include"std_msgs/String.h"
 #include"beginner_tutorials/change_base_output_string.h"
 
+// string that is changed by the user
 std::string txt1 = "Hi there ";
 
+/**
+ * @brief To change the string that is being published
+ * @param req : Request to the service
+ * @param res : Response sent to the client
+ * @return bool
+ */
 bool changeString(beginner_tutorials::change_base_output_string::Request &req,
                 beginner_tutorials::change_base_output_string::Response &res) {
                   ROS_WARN_STREAM("The output string has been changed");
@@ -46,7 +53,12 @@ bool changeString(beginner_tutorials::change_base_output_string::Request &req,
                   return true;
                   }
 
-
+/**
+ * @brief Runs the code
+ * @param argc : Counter to number of arguments
+ * @param argv : Contains the rate for publishing data
+ * @return int
+ */
 int main(int argc, char **argv) {
 ros::init(argc, argv, "talker");
 ros::NodeHandle n;
@@ -56,14 +68,15 @@ int rate = std::stoi(argv[1]);
 ros::Rate main_rate(1);
 main_rate.sleep();
 
+// checks for appropriate publishing rate
 if(rate > 10) {
   ROS_WARN_STREAM("The frequency rate is high");
-} else if(rate < 0) {
+} else if (rate < 0) {
   ROS_FATAL_STREAM("Frequecy rate cannot be negative");
   ROS_INFO("Ending the program");
   ros::shutdown();
   return 1;
-} else if(rate == 0) {
+} else if (rate == 0) {
   ROS_ERROR_STREAM("Frequncy rate cannot be 0");
   ROS_INFO_STREAM("Increasing the frequncy to the default 1Hz");
   rate = 1;
@@ -77,7 +90,7 @@ ROS_DEBUG_STREAM_ONCE("Frequency rate is set at: " << rate);
 ros::ServiceServer server = n.advertiseService("change_base_output_string",
                                                   changeString);
 
-
+// publishes the data
 int count = 0;
 while(ros::ok()) {
   std_msgs::String msg;

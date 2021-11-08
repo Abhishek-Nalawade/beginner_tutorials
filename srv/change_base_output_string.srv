@@ -1,0 +1,6 @@
+#request
+string previousString
+
+---
+#response
+string nextString

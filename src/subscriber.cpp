@@ -35,6 +35,11 @@
 #include"ros/ros.h"
 #include"std_msgs/String.h"
 
+/**
+ * @brief To diplay the message heard
+ * @param msg: contains the string that was received from the publisher
+ * @return void
+ */
 void chatterCallback(const std_msgs::String::ConstPtr& msg) {
   ROS_INFO("I am hearing: [%s]", msg->data.c_str());
 }

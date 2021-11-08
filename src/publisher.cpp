@@ -39,7 +39,24 @@ int main(int argc, char **argv) {
 ros::init(argc, argv, "talker");
 ros::NodeHandle n;
 ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-ros::Rate loop_rate(10);
+int rate = std::stoi(argv[1]);
+if(rate > 10) {
+  ROS_WARN_STREAM("The frequency rate is high");
+} else if(rate < 0) {
+  ROS_FATAL_STREAM("Frequecy rate cannot be negative");
+  ROS_INFO("Ending the program");
+  ros::shutdown();
+  return 1;
+} else if(rate == 0) {
+  ROS_ERROR_STREAM("Frequncy rate cannot be 0");
+  ROS_INFO_STREAM("Increasing the frequncy to the default 1Hz");
+  rate = 1;
+} else {
+  ROS_INFO("The frequency looks good");
+}
+ros::Rate loop_rate(rate);
+
+ROS_DEBUG_STREAM_ONCE("Frequency rate is set at: " << rate);
 
 int count = 0;
 while(ros::ok()) {
@@ -47,7 +64,7 @@ while(ros::ok()) {
   std::string txt;
   txt = "Hi there " + std::to_string(count);
   msg.data = txt;
-  std::cout<<"HERE "<<argv[1]<<"\n";
+
   ROS_INFO("%s", msg.data.c_str());
 
   chatter_pub.publish(msg);

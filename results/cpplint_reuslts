@@ -1,10 +1,9 @@
 $ cpplint $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") $( find . -name *.hpp | grep -vE -e "^./build/" -e "^./vendor/")
-./src/publisher.cpp:39:  Static/global string variables are not permitted.  [runtime/string] [4]
-./src/publisher.cpp:41:  Is this a non-const reference? If so, make const or use a pointer: beginner_tutorials::change_base_output_string::Request &req  [runtime/references] [2]
-./src/publisher.cpp:42:  Is this a non-const reference? If so, make const or use a pointer: beginner_tutorials::change_base_output_string::Response &res  [runtime/references] [2]
+./src/publisher.cpp:41:  Static/global string variables are not permitted.  [runtime/string] [4]
+./src/publisher.cpp:49:  Is this a non-const reference? If so, make const or use a pointer: beginner_tutorials::change_base_output_string::Request &req  [runtime/references] [2]
+./src/publisher.cpp:50:  Is this a non-const reference? If so, make const or use a pointer: beginner_tutorials::change_base_output_string::Response &res  [runtime/references] [2]
 Done processing ./src/publisher.cpp
 Done processing ./src/subscriber.cpp
+Done processing ./test/service_test.cpp
 Total errors found: 3
-
-
 

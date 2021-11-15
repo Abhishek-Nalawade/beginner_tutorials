@@ -24,7 +24,7 @@ git clone https://github.com/Abhishek-Nalawade/beginner_tutorials
 
 ## ROS Service
 To change the output string that is being published
-1) ```Open a new terminal and navigate to catkin_ws
+1) ```Open a new terminal and navigate to catkin_ws```
 2) ```source devel/setup.bash```
 3) ```rosservice call /change_base_output_string "New string "```
 
@@ -37,6 +37,12 @@ To change the output string that is being published
 4) ```rosrun tf view_frames```\
 5) ```evince frames.pdf```\
 6) ```rosrun rqt_tf_tree rqt_tf_tree```\
+
+##Test
+To run the tests
+1) ```cd catkin_ws```\
+2) ```source devel/setup.bash```\
+3) ```catkin_make run_tests_beginner_tutorials```\
 
 ##Rosbag
 The rosbag recording is disabled by default.

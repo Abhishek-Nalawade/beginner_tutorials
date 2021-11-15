@@ -32,18 +32,18 @@ To change the output string that is being published
 ## Inspect TF Frames
 
 
-1) ```cd catkin_ws```\
-2) ```source devel/setup.bash```\
-3) ```rosrun tf tf_echo /world /talk```\
-4) ```rosrun tf view_frames```\
-5) ```evince frames.pdf```\
-6) ```rosrun rqt_tf_tree rqt_tf_tree```\
+1) ```cd catkin_ws```
+2) ```source devel/setup.bash```
+3) ```rosrun tf tf_echo /world /talk```
+4) ```rosrun tf view_frames```
+5) ```evince frames.pdf```
+6) ```rosrun rqt_tf_tree rqt_tf_tree```
 
 ## Test
 To run the tests
-1) ```cd catkin_ws```\
-2) ```source devel/setup.bash```\
-3) ```catkin_make run_tests_beginner_tutorials```\
+1) ```cd catkin_ws```
+2) ```source devel/setup.bash```
+3) ```catkin_make run_tests_beginner_tutorials```
 
 ## Rosbag
 

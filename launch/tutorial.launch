@@ -1,5 +1,11 @@
 <launch>
 	<arg name = "arg1" default = "1"/>
+	<arg
+	    name = "bagRecord"
+	    default = "true"
+  	 />
+
+
 	<node pkg = "beginner_tutorials"
 		type = "publisher"
 		name = "speaker"
@@ -10,6 +16,16 @@
 		type = "subscriber"
 		name = "microphone"
 		output = "screen"/>
+
+	 <node 
+		pkg = "rosbag"
+		type = "record"
+		name = "rosbag_rec"
+		args = "record --duration=15 -a -O $(find beginner_tutorials)/results/bag"
+		if = "$(arg bagRecord)"
+	   />
+
+
 
 
 

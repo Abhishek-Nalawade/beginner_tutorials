@@ -28,6 +28,39 @@ To change the output string that is being published
 2) ```source devel/setup.bash```
 3) ```rosservice call /change_base_output_string "New string "```
 
+##Inspect TF Frames
+```1) cd catkin_ws
+2) source devel/setup.bash
+3) rosrun tf tf_echo /world /talk
+4) rosrun tf view_frames
+5) evince frames.pdf
+6) rosrun rqt_tf_tree rqt_tf_tree```
+
+##Rosbag
+The rosbag recording is disabled by default.
+
+To generate a new rosbag file type
+
+```roslaunch beginner_tutorials launcher.launch rosbagEnable:=true```
+
+A bag file will be saved in Results directory. To play the ROS bag file, terminate the talker and listener nodes, and type the following in a new terminal.
+
+```rosrun beginner_tutorials listener```
+
+Open new terminal, and navigate to Results directory.
+
+cd cakin_ws/src/beginner_tutorials/Results
+rosbag play bag.bag
+
+
+Inspecting the bag
+
+To inspect a recorded bag file: cd into the resutls directory where rosbags are stored and type
+
+```rosbag info recordedbag.bag```
+
+
+
 ## Dependencies
 1) Ubuntu 18.04
 2) ROS Melodic

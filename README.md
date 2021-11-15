@@ -67,7 +67,7 @@ Inspecting the bag
 
 To inspect a recorded bag file: cd into the resutls directory where rosbags are stored and type
 
-```rosbag info recordedbag.bag```
+```rosbag info bag.bag```
 
 
 

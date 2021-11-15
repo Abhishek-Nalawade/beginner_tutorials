@@ -28,7 +28,9 @@ To change the output string that is being published
 2) ```source devel/setup.bash```
 3) ```rosservice call /change_base_output_string "New string "```
 
+
 ##Inspect TF Frames
+
 ```1) cd catkin_ws```
 ```2) source devel/setup.bash```
 ```3) rosrun tf tf_echo /world /talk```

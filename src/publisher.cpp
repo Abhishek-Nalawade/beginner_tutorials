@@ -31,6 +31,7 @@
  *
  * @copyright Copyright (c) 2021
  */
+#include <tf/transform_broadcaster.h>
 #include<iostream>
 #include"ros/ros.h"
 #include"std_msgs/String.h"
@@ -62,6 +63,12 @@ bool changeString(beginner_tutorials::change_base_output_string::Request &req,
 int main(int argc, char **argv) {
 ros::init(argc, argv, "talker");
 ros::NodeHandle n;
+
+// TransformBroadcaster object to send transformations
+tf::TransformBroadcaster br;
+tf::Transform trans;
+tf::Quaternion q;
+
 ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 int rate = std::stoi(argv[1]);
 
@@ -94,6 +101,14 @@ ros::ServiceServer server = n.advertiseService("change_base_output_string",
 int count = 0;
 while(ros::ok()) {
   std_msgs::String msg;
+
+  q.setRPY(5.0, 1, 1.0);
+    trans.setRotation(q);
+    trans.setOrigin(tf::Vector3(1.0, 4.0, 6.0));
+    br.sendTransform(tf::StampedTransform(trans, ros::Time::now(), "world",
+                      "talk"));
+
+
   std::string txt;
   txt = txt1 + std::to_string(count);
   msg.data = txt;

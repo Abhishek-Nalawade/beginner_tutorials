@@ -223,7 +223,7 @@ if(CATKIN_ENABLE_TESTING)
   ${catkin_LIBRARIES}
   )
   add_dependencies(
-  speaker
+  publisher
   service_test
   ${catkin_EXPORTED_TARGETS}
   )

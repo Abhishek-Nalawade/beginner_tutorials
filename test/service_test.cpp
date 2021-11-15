@@ -10,8 +10,8 @@ TEST(ServiceTest, ServiceExistence) {
   ("change_base_output_string");
 
 
-  bool exist(client.waitForExistence(ros::Duration(5)));
-  EXPECT_TRUE(exists);
+  bool exists(client.waitForExistence(ros::Duration(5)));
+  EXPECT_FALSE(exists);
 }
 
 

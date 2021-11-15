@@ -209,3 +209,22 @@ target_link_libraries(publisher ${catkin_LIBRARIES})
 
 add_executable(subscriber src/subscriber.cpp)
 target_link_libraries(subscriber ${catkin_LIBRARIES})
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+
+  add_rostest_gtest(
+  service_test 
+  test/service_test.launch 
+  test/service_test.cpp
+  )
+  target_link_libraries(
+  service_test
+  ${catkin_LIBRARIES}
+  )
+  add_dependencies(
+  speaker
+  service_test
+  ${catkin_EXPORTED_TARGETS}
+  )
+endif()

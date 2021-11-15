@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="beginner_tutorials" name="speaker" type="publisher"/>
+  <test pkg="beginner_tutorials" type="Service_test" test-name="Service_test" />
+</launch>

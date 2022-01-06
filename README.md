@@ -51,11 +51,11 @@ The rosbag recording is disabled by default.
 
 To generate a new rosbag file type
 
-```roslaunch beginner_tutorials launcher.launch rosbagEnable:=true```
+```roslaunch beginner_tutorials tutorial.launch rosbagEnable:=true```
 
 A bag file will be saved in Results directory. To play the ROS bag file, terminate the talker and listener nodes, and type the following in a new terminal.
 
-```rosrun beginner_tutorials listener```
+```rosrun beginner_tutorials subscriber```
 
 Open new terminal, and navigate to Results directory.
 
